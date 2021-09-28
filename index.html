@@ -2,22 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dyer Design Portfolio</title>
+    <title>Rain or Shine</title>
     <link rel="stylesheet" href="./reset.css" />
-    <link rel="stylesheet" href="./rain-or-shine.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Dawning+of+a+New+Day&family=La+Belle+Aurore&family=MonteCarlo&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <div></div>
-      <div></div>
+      <h1>Rain or Shine?</h1>
     </header>
     <main>
-      <div></div>
-      <div></div>
+      <div class="flexsearch">
+        <h2>Search for a City:</h2>
+        <input id="input" placeholder="Atlanta"></input>
+        <button id="search">Search</button>
+        <div class="results">
+          <h2>Results:</h2>
+          <button id="result1">Atlanta</button>
+        </div>
+      </div>
+      <div id="card">
+        <div id="city-default">
+          <div id="city-date-pair">
+            <h3 id="city">Atlanta, GA</h3>
+            <h4 id="today">Date:</h4>
+        </div>
+          <img id="main-icon" src="./assets/gifs/weather-partly-shower.gif" />
+        </div>
+        <div id="labels">
+        <h5 id="temp">Temperature:</h5>
+        <h5 id="wind">Wind:</h5>
+        <h5 id="humid">Humidity:</h5>
+        <h5 id="uvi">UV Index:</h5>
+      </div>
+      <div>
+      </div>
     </main>
     <footer>
       <h6><a href="https://www.dyer.design">https://www.dyer.design</a></h6>
     </footer>
-    <script src="./develop/js/quiz.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

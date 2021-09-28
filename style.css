@@ -1,0 +1,196 @@
+body {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  min-height: 100vh;
+}
+
+header {
+  background-color: lightblue;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(56, 56, 164),
+    lightblue
+  );
+  width: 100%;
+  height: 170px;
+  padding: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Title Text */
+h1 {
+  color: rgb(255, 215, 56);
+  font-family: "Dawning of a New Day", cursive;
+  font-size: 50px;
+  font-weight: bolder;
+  margin: 0 auto;
+}
+
+/* Entire page flex row */
+main {
+  margin: 0 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Left column flex column */
+.flexsearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex;
+}
+
+/* Search for a City:  &&  Results: */
+h2 {
+  color: rgb(56, 56, 164);
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+/* Entry field  */
+#input {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  color: rgb(35, 35, 35);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(147, 147, 147);
+}
+
+/* Search Button */
+#search {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  color: white;
+  background-color: rgb(56, 56, 164);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 25px 0;
+}
+
+/* Results container below line */
+.results {
+  background-color: white;
+  border-top: 1px solid rgb(56, 56, 164);
+  padding-top: 25px;
+  margin-top: 25px;
+}
+
+/* Latest search results / history */
+#result1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  color: rgb(56, 56, 164);
+  background-color: rgb(242, 242, 255);
+  border: 1px solid rgb(56, 56, 164);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Card container */
+#card {
+  margin: 25px auto 25px 60px;
+  height: auto;
+  width: 70%;
+  background-color: white;
+  box-shadow: 0px 8px 30px rgb(205, 205, 205);
+  border-radius: 15px;
+  padding: 30px;
+}
+
+/* Main gif */
+#main-icon {
+  margin-left: 40px;
+  width: 175px;
+}
+
+#city-default {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#city-date-pair {
+  display: flex;
+  flex-direction: column;
+}
+
+/* City Name */
+h3 {
+  color: rgb(56, 56, 164);
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  margin: 25px;
+}
+
+/* Today's Date */
+h4 {
+  color: rgb(0, 0, 0);
+  font-family: "Quicksand", sans-serif;
+  font-size: 16pt;
+  justify-self: left;
+  margin: 0 25px;
+}
+
+/* All Detail labels */
+h5 {
+  color: rgb(45, 45, 45);
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  justify-self: left;
+  margin: 10px 0;
+}
+
+#labels {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+  align-items: flex-start;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(246, 246, 246);
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Footer text */
+h6 a {
+  font-family: "Quicksand", sans-serif;
+  font-size: 9pt;
+  text-decoration: none;
+  color: rgb(184, 184, 184);
+}
+
+@media screen and (max-width: 1100px) {
+  main {
+    flex-direction: column-reverse;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0px;
+  }
+
+  #card {
+    width: 80%;
+    margin-bottom: 60px;
+  }
+
+  .flexsearch {
+    margin-bottom: 150px;
+  }
+}
