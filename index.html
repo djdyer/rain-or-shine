@@ -11,16 +11,15 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Dawning+of+a+New+Day&family=La+Belle+Aurore&family=MonteCarlo&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1>Rain or Shine?</h1>
+      <h1>Rain <span>or</span> Shine?</h1>
     </header>
+
     <main>
-      <div class="flexsearch">
+      <!-- Left column - Search & Results -->
+      <aside class="flexsearch">
         <h2>Search for a City:</h2>
         <input id="input" placeholder="Atlanta"></input>
         <button id="search">Search</button>
@@ -28,41 +27,143 @@
           <h2>Results:</h2>
           <button id="result1">Atlanta</button>
         </div>
-      </div>
-      <div id="card">
-        <div id="city-date-gif">
-          <div id="city-date">
-            <h3 id="city">Atlanta, GA</h3>
-            <h4 id="today">Date:</h4>
-          </div>
-          <div>
-            <img id="main-icon" src="./assets/gifs/weather-partly-shower.gif" />
-          </div>
+      </aside>
+
+      <section>
+        <!-- Main Results Card -->
+        <div id="card">
+         
+            <!-- City and Date pair -->
+            <div id="city-date">
+              <h3 id="city">Atlanta, GA</h3>
+              <h4 id="date">Thursday Sept 29th, 2021</h4>
+            </div>
+
+            <!-- Main gif  -->
+            <img id="day1icon" src="./assets/gifs/weather-partly-shower.gif" />
+              
+            <!-- Day 1 Labels -->
+            <div id="labels">
+              <h5>Temperature:</h5>
+              <h5>Wind:</h5>
+              <h5>Humidity:</h5>
+              <h5>UV Index:</h5>
+            </div>
+
+            <!-- Day 1 Data -->
+            <div id="details">
+              <h5 id="temp">72°</h5>
+              <h5 id="wind">27 mph</h5>
+              <h5 id="humid">91%</h5>
+              <h5 id="uvi">7.0</h5>
+            </div>
+        <div>
+      </section>
+
+       <section>
+        <div>
+          <h3 id="subhead">5 Day Forecast</h3>
         </div>
-          <div id="labels">
-            <h5 id="temp">Temperature:</h5>
-            <h5 id="wind">Wind:</h5>
-            <h5 id="humid">Humidity:</h5>
-            <h5 id="uvi">UV Index:</h5>
+          <div class="forecast">
+            <!-- Day 2 -->
+            <article class="small-card">
+              <img id="day2icon" src="./assets/gifs/weather-partly-shower.gif" />
+              <h4>Day2</h4>
+              <div class="smallflex">
+              <div id="labels">
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+                <h6>UV Index:</h6>
+              </div>
+              <div id="details">
+                <h6 id="temp2">72°</h6>
+                <h6 id="wind2">27 mph</h6>
+                <h6 id="humid2">91%</h6>
+                <h6 id="uvi2">7.0</h6>
+              </div>
+              </div>
+            </article>
+            <!-- Day 3 -->
+            <article class="small-card">
+              <img id="day3icon" src="./assets/gifs/weather-storm.gif" />
+              <h4>Day 3</h4>
+              <div class="smallflex">
+              <div id="labels">
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+                <h6>UV Index:</h6>
+              </div>
+              <div id="details">
+                <h6 id="temp3">72°</h6>
+                <h6 id="wind3">27 mph</h6>
+                <h6 id="humid3">91%</h6>
+                <h6 id="uvi3">7.0</h6>
+              </div>
+              </div>
+            </article>
+            <!-- Day 4 -->
+            <article class="small-card">
+              <img id="day4icon" src="./assets/gifs/weather-sunny.gif" />
+              <h4>Day 4</h4>
+              <div class="smallflex">
+              <div id="labels">
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+                <h6>UV Index:</h6>
+              </div>
+              <div id="details">
+                <h6 id="temp4">72°</h6>
+                <h6 id="wind4">27 mph</h6>
+                <h6 id="humid4">91%</h6>
+                <h6 id="uvi4">7.0</h6>
+              </div>
+              </div>
+            </article>
+            <!-- Day 5 -->
+            <article class="small-card">
+              <img id="day5icon" src="./assets/gifs/weather-sunny.gif" />
+              <h4>Day 5</h4>
+              <div class="smallflex">
+                <div id="labels">
+                  <h6>Temperature:</h6>
+                  <h6>Wind:</h6>
+                  <h6>Humidity:</h6>
+                  <h6>UV Index:</h6>
+                </div>
+                <div id="details">
+                  <h6 id="temp5">72°</h6>
+                  <h6 id="wind5">27 mph</h6>
+                  <h6 id="humid5">91%</h6>
+                  <h6 id="uvi5">7.0</h6>
+                </div>
+            </div>
+            </article>
+            <!-- Day 6 -->
+            <article class="small-card">
+              <img id="day6icon" src="./assets/gifs/weather-partly-cloudy.gif" />
+                <h4>Day 6</h4>
+                <div class="smallflex">
+                <div id="labels">
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+                <h6>UV Index:</h6>
+              </div>
+              <div id="details">
+                <h6 id="temp6">72°</h6>
+                <h6 id="wind6">27 mph</h6>
+                <h6 id="humid6">91%</h6>
+                <h6 id="uvi6">7.0</h6>
+              </div>
+              </div>
+            </article>
           </div>
-      <div>
-      </div>
+      </section>
+
     </main>
-    <section>
-      <h2>5 Day Forecast</h2>
-      <div class="forecast">
-        <div id="day2">
-        </div>
-        <div id="day3">
-        </div>
-        <div id="day4">
-        </div>
-        <div id="day5">
-        </div>
-        <div id="day6">
-        </div>
-      </div>
-    </section>
     <footer>
       <h6><a href="https://www.dyer.design">https://www.dyer.design</a></h6>
     </footer>

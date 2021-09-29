@@ -20,11 +20,15 @@ header {
 
 /* Title Text */
 h1 {
-  color: rgb(255, 215, 56);
-  font-family: "Dawning of a New Day", cursive;
-  font-size: 50px;
+  color: rgb(255, 255, 255);
+  font-family: "Quicksand", sans-serif;
+  font-size: 30pt;
   font-weight: bolder;
   margin: 0 auto;
+}
+
+span {
+  font-size: 20pt;
 }
 
 /* Entire page flex row */
@@ -32,14 +36,14 @@ main {
   margin: 0 50px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 /* Left column flex column */
 .flexsearch {
   display: flex;
   flex-direction: column;
-  justify-content: flex;
 }
 
 /* Search for a City:  &&  Results: */
@@ -86,37 +90,48 @@ h2 {
   font-size: 14pt;
   color: rgb(56, 56, 164);
   background-color: rgb(242, 242, 255);
-  border: 1px solid rgb(56, 56, 164);
+  border: none;
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
   width: 100%;
 }
 
+/* section {
+  margin: 20px 60px;
+} */
+
 /* Card container */
 #card {
-  margin: 25px auto 25px 60px;
-  height: auto;
-  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 400px;
+  width: 100%;
   background-color: white;
   box-shadow: 0px 8px 30px rgb(205, 205, 205);
   border-radius: 15px;
   padding: 30px;
+  align-items: center;
+  margin: 65px 0 0 50px;
 }
 
 /* Main gif */
-#main-icon {
-  margin-left: 40px;
-  width: 175px;
+#day1icon {
+  margin: 0 20px;
+  width: 150px;
 }
 
-#city-default {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+#day2icon,
+#day3icon,
+#day4icon,
+#day5icon,
+#day6icon {
+  width: 75px;
+  margin: 20px;
 }
 
-#city-date-pair {
+#city-date {
   display: flex;
   flex-direction: column;
 }
@@ -126,19 +141,19 @@ h3 {
   color: rgb(56, 56, 164);
   font-family: "Quicksand", sans-serif;
   font-size: 30px;
-  margin: 25px;
+  margin: 20px;
 }
 
 /* Today's Date */
 h4 {
   color: rgb(0, 0, 0);
   font-family: "Quicksand", sans-serif;
-  font-size: 16pt;
+  font-size: 14pt;
   justify-self: left;
-  margin: 0 25px;
+  margin: 0 20px;
 }
 
-/* All Detail labels */
+/* All Detail labels & values */
 h5 {
   color: rgb(45, 45, 45);
   font-family: "Quicksand", sans-serif;
@@ -147,33 +162,58 @@ h5 {
   margin: 10px 0;
 }
 
-#labels {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 25px;
-  align-items: flex-start;
+h6 {
+  color: rgb(45, 45, 45);
+  font-family: "Quicksand", sans-serif;
+  font-size: 12pt;
+  justify-self: left;
+  margin: 10px 0;
+}
+
+#uvi {
+  color: white;
+  background-color: orange;
+  background-image: linear-gradient(to top left, red, orange);
+  padding: 1px 10px 1px 1px;
+  text-align: left;
+}
+
+#subhead {
+  text-align: center;
+  margin: 80px auto;
 }
 
 .forecast {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 200px;
 }
 
-#day2,
-#day3,
-#day4,
-#day5,
-#day6 {
-  margin: 25px;
+.small-card {
+  display: block;
+  margin: 10px;
   height: auto;
-  width: 25%;
+  width: 100%
   background-color: white;
   box-shadow: 0px 8px 30px rgb(205, 205, 205);
   border-radius: 15px;
-  padding: 10px;
-  margin: 0 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+.smallflex {
+  display: flex;
+  flex-direction: row;
+}
+
+#labels,
+#details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px;
+  align-items: flex-start;
 }
 
 /* Footer */
@@ -189,7 +229,7 @@ footer {
 }
 
 /* Footer text */
-h6 a {
+a {
   font-family: "Quicksand", sans-serif;
   font-size: 9pt;
   text-decoration: none;
@@ -198,19 +238,51 @@ h6 a {
 
 @media screen and (max-width: 1100px) {
   main {
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100%;
     justify-content: space-around;
     align-items: center;
     margin: 50px 0px;
   }
 
+  header {
+    height: 100px;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 22pt;
+  }
+
+  h3 {
+    font-size: 18pt;
+  }
+
+  h4,
+  h5 {
+    font-size: 12pt;
+  }
+
+  #main-icon {
+    width: 120px;
+    margin: 0px 10px;
+  }
+
+  span {
+    font-size: 18pt;
+  }
+
   #card {
-    width: 80%;
-    margin-bottom: 60px;
+    width: 100%;
+    margin: 50px auto;
   }
 
   .flexsearch {
-    margin-bottom: 150px;
+    margin-bottom: 40px;
+  }
+
+  #labels,
+  #details {
+    padding: 10px;
   }
 }
