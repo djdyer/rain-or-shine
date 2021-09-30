@@ -86,6 +86,7 @@ h2 {
   border-top: 1px solid rgb(33, 121, 198);
   padding-top: 25px;
   margin-top: 25px;
+  margin-bottom: 200px;
 }
 
 /* Latest search results / history */
@@ -93,7 +94,11 @@ h2 {
 #result2,
 #result3,
 #result4,
-#result5 {
+#result5,
+#result6,
+#result7,
+#result8,
+#result9 {
   font-family: "Quicksand", sans-serif;
   font-size: 14pt;
   color: rgb(33, 121, 198);
@@ -135,8 +140,12 @@ h2 {
   margin: 20px;
 }
 
+section {
+  display: none;
+}
+
 #city-date {
-  display: flex;
+  display: ;
   flex-direction: column;
 }
 
@@ -275,6 +284,10 @@ a {
 
   span {
     font-size: 18pt;
+  }
+
+  .results {
+    margin-bottom: 50px;
   }
 
   #card {
