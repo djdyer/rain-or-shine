@@ -21,20 +21,23 @@
 
       <!-- Left column - Search & Results -->
       <aside class="flexsearch">
-        <h2>Search for a City:</h2>
+        <h3>Search for a City:</h3>
         <input id="input"></input>
         <button id="search">Search</button>
         <div class="results">
-          <h2>Results:</h2>
+          <div id="results-header">
+            <h3>Results:</h3>
+            <button id="closeBtn">X</button>
+          </div>
           <button id="result1">Atlanta</button>
-          <!-- <button id="result2">New York</button>
+          <button id="result2">New York</button>
           <button id="result3">Miami</button>
           <button id="result4">New Orleans</button>
           <button id="result5">Dallas</button>
           <button id="result6">Phoenix</button>
           <button id="result7">Los Angeles</button>
           <button id="result8">San Diego</button>
-          <button id="result9">Seattle</button> -->
+          <button id="result9">Seattle</button>
         </div>
       </aside>
 
@@ -44,13 +47,14 @@
 
             <!-- City and Date pair -->
             <div>
-              <h3 id="city">Atlanta, GA</h3>
+              <h2 id="city">Atlanta, GA</h2>
               <h4 id="date">Date</h4>
             </div>
 
             <!-- Main gif  -->
-            <img id="day1icon" src="./assets/day-gifs/weather-partly-shower.gif" />
-              
+            <!-- <img id="day1icon" src="./assets/day-gifs/weather-partly-shower.gif" /> -->
+            <img id="day1icon" src="./assets/night-gifs/partly-cloudy-night.gif" />
+            
             <!-- Day 1 Labels -->
             <div id="labels">
               <h5>Temp:</h5>
@@ -72,12 +76,13 @@
       <!-- 5 Day Forecast -->
        <section>
         <div>
-          <h3 id="subhead">5 Day Forecast</h3>
+          <h2 id="subhead">5 Day Forecast</h2>
         </div>
           <div class="forecast">
             <!-- Day 2 -->
             <article class="small-card">
-              <img id="day2icon" src="./assets/day-gifs/weather-partly-shower.gif" />
+              <!-- <img id="day2icon" src="./assets/day-gifs/weather-partly-shower.gif" /> -->
+              <img id="day2icon" src="./assets/night-gifs/partly-shower-night.gif" />
               <h4 id="day2">Day2</h4>
               <div class="smallflex">
               <div id="labels">
@@ -94,7 +99,8 @@
             </article>
             <!-- Day 3 -->
             <article class="small-card">
-              <img id="day3icon" src="./assets/day-gifs/weather-storm.gif" />
+              <!-- <img id="day3icon" src="./assets/day-gifs/weather-storm.gif" /> -->
+              <img id="day3icon" src="./assets/night-gifs/storm-night.gif" />
               <h4 id="day3">Day 3</h4>
               <div class="smallflex">
               <div id="labels">
@@ -111,7 +117,8 @@
             </article>
             <!-- Day 4 -->
             <article class="small-card">
-              <img id="day4icon" src="./assets/day-gifs/weather-sunny.gif" />
+              <!-- <img id="day4icon" src="./assets/day-gifs/weather-sunny.gif" /> -->
+              <img id="day4icon" src="./assets/night-gifs/windy-night.gif" />
               <h4 id="day4">Day 4</h4>
               <div class="smallflex">
               <div id="labels">
@@ -128,7 +135,8 @@
             </article>
             <!-- Day 5 -->
             <article class="small-card">
-              <img id="day5icon" src="./assets/day-gifs/weather-sunny.gif" />
+              <!-- <img id="day5icon" src="./assets/day-gifs/weather-sunny.gif" /> -->
+              <img id="day5icon" src="./assets/night-gifs/thunder-night.gif" />
               <h4 id="day5">Day 5</h4>
               <div class="smallflex">
                 <div id="labels">
@@ -145,7 +153,8 @@
             </article>
             <!-- Day 6 -->
             <article class="small-card">
-              <img id="day6icon" src="./assets/day-gifs/weather-partly-cloudy.gif" />
+              <!-- <img id="day6icon" src="./assets/day-gifs/weather-partly-cloudy.gif" /> -->
+              <img id="day6icon" src="./assets/night-gifs/clear-night.gif" />
                 <h4 id="day6">Day 6</h4>
                 <div class="smallflex">
                 <div id="labels">
@@ -166,7 +175,7 @@
     </main>
 
     <footer>
-      <h6><a href="https://www.dyer.design">https://www.dyer.design</a></h6>
+      <h6><a href="https://www.dyer.design">https://dyer.design © 2021 </a></h6>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

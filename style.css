@@ -1,11 +1,17 @@
-body {
-  background-color: rgb(255, 255, 255);
+html {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
+}
+
+body {
+  /* background-color: rgb(255, 255, 255); */
+  background-color: rgb(21, 21, 21);
+  margin: 0 0 150px;
 }
 
 header {
-  background-image: url(./assets/clouds.png);
+  /* background-image: url(./assets/clouds.png); */
+  background-image: url(./assets/night-sky.png);
   /* background-color: lightblue;
   background-image: linear-gradient(
     to bottom right,
@@ -14,6 +20,7 @@ header {
   ); */
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100%;
   width: 100%;
   height: 170px;
   padding: 60px;
@@ -23,7 +30,7 @@ header {
 
 /* Title Text */
 h1 {
-  color: rgb(255, 255, 255);
+  color: rgb(201, 201, 201);
   font-family: "Quicksand", sans-serif;
   font-size: 30pt;
   font-weight: bolder;
@@ -36,7 +43,7 @@ span {
 
 /* Entire page flex row */
 main {
-  margin: 0 50px;
+  margin: 0 50px 100px 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -51,8 +58,9 @@ main {
 }
 
 /* Search for a City:  &&  Results: */
-h2 {
-  color: rgb(33, 121, 198);
+h3 {
+  /* color: rgb(33, 121, 198); */
+  color: rgb(201, 201, 201);
   font-family: "Quicksand", sans-serif;
   font-size: 20px;
   margin: 25px 0;
@@ -62,10 +70,18 @@ h2 {
 #input {
   font-family: "Quicksand", sans-serif;
   font-size: 14pt;
-  color: rgb(35, 35, 35);
+  /* color: rgb(35, 35, 35); */
+  color: white;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid rgb(33, 121, 198);
+  /* border: 1px solid rgb(33, 121, 198); */
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #333;
+}
+
+/* No outline in darkmode! */
+#input:focus {
+  outline: none;
 }
 
 /* Search Button */
@@ -73,7 +89,8 @@ h2 {
   font-family: "Quicksand", sans-serif;
   font-size: 14pt;
   color: white;
-  background-color: rgb(33, 121, 198);
+  /* background-color: rgb(33, 121, 198); */
+  background-color: black;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -82,11 +99,32 @@ h2 {
 
 /* Results container below line */
 .results {
-  background-color: white;
-  border-top: 1px solid rgb(33, 121, 198);
+  /* border-top: 1px solid rgb(33, 121, 198); */
+  border-top: 1px solid #333;
   padding-top: 25px;
   margin-top: 25px;
   margin-bottom: 50px;
+}
+
+#results-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+#closeBtn {
+  position: relative;
+  height: 40px;
+  width: 35px;
+  padding: 5px;
+  background-color: black;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
 }
 
 /* Latest search results / history */
@@ -101,13 +139,16 @@ h2 {
 #result9 {
   font-family: "Quicksand", sans-serif;
   font-size: 14pt;
-  color: rgb(33, 121, 198);
-  background-color: rgb(232, 244, 255);
+  /* color: rgb(33, 121, 198); */
+  color: white;
+  /* background-color: rgb(232, 244, 255); */
+  background-color: #222;
   border: none;
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
   width: 100%;
+  display: none;
 }
 
 /* Card container */
@@ -117,12 +158,14 @@ h2 {
   justify-content: space-around;
   height: 400px;
   width: 100%;
-  background-color: white;
-  box-shadow: 0px 8px 30px rgb(205, 205, 205);
+  /* background-color: white; */
+  background-color: #222;
+  /* box-shadow: 0px 8px 30px rgb(205, 205, 205); */
+  box-shadow: 0px 8px 30px rgb(0, 0, 0);
   border-radius: 15px;
   padding: 30px;
   align-items: center;
-  margin: 65px 0 0 65px;
+  margin: 65px 0 25px 65px;
 }
 
 /* Main gif */
@@ -145,8 +188,9 @@ section {
 }
 
 /* City Name */
-h3 {
-  color: rgb(33, 121, 198);
+h2 {
+  color: rgb(255, 255, 255);
+  /* color: rgb(33, 121, 198); */
   font-family: "Quicksand", sans-serif;
   font-size: 30px;
   margin: 20px;
@@ -154,7 +198,8 @@ h3 {
 
 /* Today's Date */
 h4 {
-  color: rgb(0, 0, 0);
+  color: rgb(201, 201, 201);
+  /* color: rgb ??? */
   font-family: "Quicksand", sans-serif;
   font-size: 14pt;
   justify-self: left;
@@ -163,15 +208,18 @@ h4 {
 
 /* All Detail labels & values */
 h5 {
-  color: rgb(45, 45, 45);
+  /* color: rgb(45, 45, 45); */
+  color: rgb(201, 201, 201);
   font-family: "Quicksand", sans-serif;
   font-size: 14pt;
   justify-self: left;
   margin: 10px 0;
 }
 
+/* Small card labels and values  */
 h6 {
-  color: rgb(45, 45, 45);
+  /* color: rgb(45, 45, 45); */
+  color: rgb(201, 201, 201);
   font-family: "Quicksand", sans-serif;
   font-size: 12pt;
   justify-self: left;
@@ -186,9 +234,10 @@ h6 {
 
 #subhead {
   text-align: center;
-  margin: 100px auto 70px;
+  margin: 70px 0;
   padding-top: 80px;
-  border-top: 1px solid rgb(33, 121, 198);
+  /* border-top: 1px solid rgb(33, 121, 198); */
+  border-top: 1px solid #333;
 }
 
 .forecast {
@@ -202,8 +251,10 @@ h6 {
   margin: 0 20px 40px 20px;
   height: auto;
   width: 220px;
-  background-color: white;
-  box-shadow: 0px 8px 30px rgb(205, 205, 205);
+  /* background-color: white; */
+  background-color: #222;
+  /* box-shadow: 0px 8px 30px rgb(205, 205, 205); */
+  box-shadow: 0px 8px 30px rgb(0, 0, 0);
   border-radius: 15px;
   padding: 5px;
   text-align: center;
@@ -228,10 +279,12 @@ h6 {
 /* Footer */
 footer {
   position: absolute;
+  left: 0;
   bottom: 0;
   width: 100%;
   height: 100px;
-  background-color: rgb(246, 246, 246);
+  /* background-color: rgb(246, 246, 246); */
+  background-color: #111;
   align-items: center;
   text-align: center;
   padding: 40px;
@@ -243,6 +296,7 @@ a {
   font-size: 9pt;
   text-decoration: none;
   color: rgb(184, 184, 184);
+  color: rgb(63, 63, 63);
 }
 
 @media screen and (max-width: 1200px) {
