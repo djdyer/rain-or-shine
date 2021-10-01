@@ -43,7 +43,8 @@ span {
 
 /* Entire page flex row */
 main {
-  margin: 0 50px 100px 50px;
+  min-height: 100%;
+  margin: 0 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -278,7 +279,7 @@ h6 {
 
 /* Footer */
 footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
