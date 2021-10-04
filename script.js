@@ -111,8 +111,7 @@ function getCurrentWeather(city) {
         data.wind.speed
       );
       saveSearch(data.name);
-      printGifs1(data.weather[0].id);
-      // console.log(data.weather[0].id);
+      chooseGifs(data.weather[0].id);
     });
 }
 
@@ -266,112 +265,82 @@ function saveSearch(name) {
 }
 
 const thunder = 200;
-const thunderDay = "<img src=./assets/day-gifs/weather-thunder.gif></img>";
-const thunderNight = "<img src=./assets/night-gifs/thunder-night.gif></img>";
+const thunderDay = "./assets/day-gifs/weather-thunder.gif";
+const thunderNight = "./assets/night-gifs/thunder-night.gif";
 
 const thunderstorm = [201, 202, 230, 231, 232, 233];
-const stormDay = "<img src=./assets/day-gifs/weather-storm.gif></img>";
-const stormNight = "<img src=./assets/night-gifs/storm-night.gif></img>";
+const stormDay = "./assets/day-gifs/weather-storm.gif";
+const stormNight = "./assets/night-gifs/storm-night.gif";
 
 const heavyRain = [302, 500, 502, 511, 521, 522];
-const heavyRainDay = "<img src=./assets/day-gifs/storm-showers-day.gif></img>";
-const heavyRainNight =
-  "<img src=./assets/night-gifs/partly-shower-night.gif></img>";
+const heavyRainDay = "./assets/day-gifs/storm-showers-day.gif";
+const heavyRainNight = "./assets/night-gifs/partly-shower-night.gif";
 
 const lightRain = [501, 520, 300, 301];
-const lightRainDay =
-  "<img src=./assets/day-gifs/weather-partly-shower.gif></img>";
-const lightRainNight =
-  "<img src=./assets/night-gifs/partly-shower-night.gif></img>";
+const lightRainDay = "./assets/day-gifs/weather-partly-shower.gif";
+const lightRainNight = "./assets/night-gifs/partly-shower-night.gif";
 
 const snow = [601, 602, 610, 611, 612, 622];
-const snowDay = "<img src=./assets/day-gifs/weather-snow-sunny.gif></img>";
-const snowNight = "<img src=./assets/night-gifs/partly-snow-night.gif></img>";
+const snowDay = "./assets/day-gifs/weather-snow-sunny.gif";
+const snowNight = "./assets/night-gifs/partly-snow-night.gif";
 
 const lightSnow = [623, 600, 621];
-const partlySnowDay = "<img src=./assets/day-gifs/weather-snow.gif></img>";
-const partlySnowNight = "<img src=./assets/night-gifs/snow-night.gif></img>";
+const partlySnowDay = "./assets/day-gifs/weather-snow.gif";
+const partlySnowNight = "./assets/night-gifs/snow-night.gif";
 
 const mist = [700, 711, 721, 731, 741, 751, 900];
-const mistDay = "<img src=./assets/day-gifs/weather-mist.gif></img>";
-const mistNight = "<img src=./assets/night-gifs/mist-night.gif></img>";
+const mistDay = "./assets/day-gifs/weather-mist.gif";
+const mistNight = "./assets/night-gifs/mist-night.gif";
 
 const clearSky = 800;
-const clearDay = "<img src=./assets/day-gifs/weather-sunny.gif></img>";
-const clearNight = "<img src=./assets/night-gifs/clear-night.gif></img>";
+const clearDay = "./assets/day-gifs/weather-sunny.gif";
+const clearNight = "./assets/night-gifs/clear-night.gif";
 
 const partlyCloudy = [801, 802, 803];
-const partlyCloudyDay =
-  "<img src=./assets/day-gifs/weather-partly-cloudy.gif></img>";
-const partlyCloudyNight =
-  "<img src=./assets/night-gifs/partly-cloudy-night.gif></img>";
+const partlyCloudyDay = "./assets/day-gifs/weather-partly-cloudy.gif";
+const partlyCloudyNight = "./assets/night-gifs/partly-cloudy-night.gif";
 
 const overcast = 804;
-const windyDay = "<img src=./assets/day-gifs/weather-windy.gif></img>";
-const windyNight = "<img src=./assets/night-gifs/windy-night.gif></img>";
+const windyDay = "./assets/day-gifs/weather-windy.gif";
+const windyNight = "./assets/night-gifs/windy-night.gif";
 
-function printGifs1(id) {
-  console.log(id);
-  switch (true) {
-    case thunder === id && isNight(false):
-      $("#day1icon").innerHTML(thunderDay);
+var img = document.createElement("img");
+
+function chooseGifs(id) {
+  switch (isNight()) {
+    case thunder == id:
+      console.log(thunder);
+      $("#day1icon").innerHTML = thunderDay;
       break;
-    case thunder === id && isNight(true):
-      $("#day1icon").innerHTML(thunderNight);
+    case thunderstorm.includes(id):
+      $("#day1icon").innerHTML = stormDay;
       break;
-    case thunderstorm.includes(id) && isNight(false):
-      $("#day1icon").innerHTML(stormDay);
+    case heavyRain.includes(id):
+      $("#day1icon").innerHTML = heavyRainDay;
       break;
-    case thunderstorm.includes(id) && isNight(true):
-      $("#day1icon").innerHTML(stormNight);
+    case lightRain.includes(id):
+      $("#day1icon").innerHTML = lightRainDay;
       break;
-    case heavyRain.includes(id) && isNight(false):
-      $("#day1icon").innerHTML(heavyRainDay);
+    case snow.includes(id):
+      $("#day1icon").innerHTML = snowDay;
       break;
-    case heavyRain.includes(id) && isNight(true):
-      $("#day1icon").innerHTML(heavyRainNight);
+    case lightSnow.includes(id):
+      $("#day1icon").innerHTML = partlySnowDay;
       break;
-    case lightRain.includes(id) && isNight(false):
-      $("#day1icon").innerHTML(lightRainDay);
+    case mist.includes(id):
+      $("#day1icon").innerHTML = mistDay;
       break;
-    case lightRain.includes(id) && isNight(true):
-      $("#day1icon").innerHTML(lightRainNight);
+    case clearSky == id:
+      $("#day1icon").innerHTML = clearDay;
       break;
-    case snow.includes(id) && isNight(false):
-      $("#day1icon").innerHTML(snowDay);
+    case partlyCloudy.includes(id):
+      $("#day1icon").innerHTML = partlyCloudyDay;
+      console.log(overcast);
       break;
-    case snow.includes(id) && isNight(true):
-      $("#day1icon").innerHTML(snowNight);
+    case overcast == id:
+      $("#day1icon").innerHTML = windyDay;
       break;
-    case lightSnow.includes(id) && isNight(false):
-      $("#day1icon").innerHTML(partlySnowDay);
-      break;
-    case lightSnow.includes(id) && isNight(true):
-      $("#day1icon").innerHTML(partlySnowNight);
-      break;
-    case mist.includes(id) && isNight(false):
-      $("#day1icon").innerHTML(mistDay);
-      break;
-    case mist.includes(id) && isNight(true):
-      $("#day1icon").innerHTML(mistNight);
-      break;
-    case clearSky === id && isNight(false):
-      $("#day1icon").innerHTML(clearDay);
-      break;
-    case clearSky === id && isNight(true):
-      $("#day1icon").innerHTML(clearNight);
-      break;
-    case partlyCloudy.includes(id) && isNight(false):
-      $("#day1icon").innerHTML(partlyCloudyDay);
-      break;
-    case partlyCloudy.includes(id) && isNight(true):
-      $("#day1icon").innerHTML(partlyCloudyNight);
-      break;
-    case overcast === id && isNight(false):
-      $("#day1icon").innerHTML(windyDay);
-      break;
-    case overcast === id && isNight(true):
-      $("#day1icon").innerHTML(windyNight);
-      break;
+    default:
+      dayGifs(id);
   }
 }
