@@ -1,33 +1,58 @@
-$("body").attr("style", "background-color:rgb(21, 21, 21)");
-$("header").attr("style", "background-image: url(./assets/night-sky.png)");
-$("h1").attr("style", "color:rgb(201, 201, 201)");
-$("h2").attr("style", "color:rgb(201, 201, 201)");
-$("h3").attr("style", "color:rgb(201, 201, 201)");
-$("h4").attr("style", "color:rgb(201, 201, 201)");
-$("h5").attr("style", "color:rgb(201, 201, 201)");
-$("h6").attr("style", "color:rgb(201, 201, 201)");
-$("#input").attr(
-  "style",
-  "color:white; border: 1px solid #333; background-color:#222"
-);
-$("#search").attr("style", "background-color:black");
-$(".results").attr("style", "border-top: 1px solid #333");
-$("#result1").attr("style", "color:white; background-color:#222");
-$("#card").attr(
-  "style",
-  "background-color:#222; box-shadow: 0px 8px 30px rgb(0, 0, 0)"
-);
-$("#subhead").attr("style", "border-top: 1px solid #333; color:white");
-$(".small-card").attr(
-  "style",
-  "background-color:#222; box-shadow:0px 8px 30px rgb(0, 0, 0)"
-);
-$("footer").attr("style", "background-color:#111");
-$("#closeBtn").attr(
-  "style",
-  "background-color:black; border:1px solid transparent; color:white"
-);
-$("a").attr("style", "color: rgb(63, 63, 63)");
+var hour = moment().format("H");
+var hourInt = parseInt(hour);
+
+// Hours deemed nighttime
+const nightHours = [1, 2, 3, 4, 20, 21, 22, 23, 24];
+
+// If the hour of the day is in nightHours, return true, else return false
+function isNight() {
+  if (nightHours.includes(hourInt)) {
+    return "true";
+  } else {
+    return "false";
+  }
+}
+console.log(nightHours);
+
+// Darkmode fires at 8pm, and runs until 5am
+function darkMode() {
+  if (nightHours) {
+    $("body").attr("style", "background-color:rgb(21, 21, 21)");
+    $("header").attr("style", "background-image: url(./assets/night-sky.png)");
+    $("h1").attr("style", "color:rgb(201, 201, 201)");
+    $("h2").attr("style", "color:rgb(201, 201, 201)");
+    $("h3").attr("style", "color:rgb(201, 201, 201)");
+    $("h4").attr("style", "color:rgb(201, 201, 201)");
+    $("h5").attr("style", "color:rgb(201, 201, 201)");
+    $("h6").attr("style", "color:rgb(201, 201, 201)");
+    $("#input").attr(
+      "style",
+      "color:white; border: 1px solid #333; background-color:#222"
+    );
+    $("#search").attr("style", "background-color:black");
+    $(".results").attr("style", "border-top: 1px solid #333");
+    $("#result1").attr("style", "color:white; background-color:#222");
+    $("#card").attr(
+      "style",
+      "background-color:#222; box-shadow: 0px 8px 30px rgb(0, 0, 0)"
+    );
+    $("#subhead").attr("style", "border-top: 1px solid #333; color:white");
+    $(".small-card").attr(
+      "style",
+      "background-color:#222; box-shadow:0px 8px 30px rgb(0, 0, 0)"
+    );
+    $("footer").attr("style", "background-color:#111");
+    $("#closeBtn").attr(
+      "style",
+      "background-color:black; border:1px solid transparent; color:white"
+    );
+    $("a").attr("style", "color: rgb(63, 63, 63)");
+  } else {
+    return;
+  }
+}
+
+darkMode();
 
 // Sets all dates
 var day1 = moment();
@@ -111,7 +136,7 @@ function getUVindex(lat, lon) {
 }
 
 // Prints all values to main card
-function printMainData(name, temp, humidity, speed, id) {
+function printMainData(name, temp, humidity, speed) {
   $("#city").text(name);
   $("section").attr("style", "display:inline");
   var tempF = Math.round((temp - 273.15) * 1.8 + 32);
@@ -322,4 +347,4 @@ var windyNight = "./assets/night-gifs/windy-night.gif";
 //       );
 //       break;
 //   }
-// }
+//
