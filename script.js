@@ -204,13 +204,11 @@ function getForecast(city) {
             data.list[4].main.humidity,
             data.list[4].wind.speed
           );
-          // printGifs(
-          //   data.list[0].weather.id,
-          //   data.list[1].weather.id,
-          //   data.list[2].weather.id,
-          //   data.list[3].weather.id,
-          //   data.list[4].weather.id
-          // );
+          isNightGif2(data.list[0].weather.id);
+          // isNightGif3(data.list[1].weather.id);
+          // isNightGif4(data.list[2].weather.id);
+          // isNightGif5(data.list[3].weather.id);
+          // isNightGif6(data.list[4].weather.id);
         }
       }
     });
@@ -278,75 +276,99 @@ var overcast = 804;
 
 // If isNight, display only night-gifs with matching id
 function isNightGif(id) {
-  switch (isNight()) {
-    case thunder === id:
-      console.log(thunder === id);
-      $("#day1icon").attr("src", "./assets/night-gifs/thunder-night.gif");
-    case thunderstorm.includes(id):
-      console.log(thunderstorm.includes(id));
-      console.log(id);
-      $("#day1icon").attr("src", "./assets/night-gifs/storm-night.gif");
-      break;
-    case heavyRain.includes(id):
-      $("#day1icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
-      break;
-    case lightRain.includes(id):
-      $("#day1icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
-      break;
-    case snow.includes(id):
-      $("#day1icon").attr("src", "./assets/night-gifs/snow-night.gif");
-      break;
-    case lightSnow.includes(id):
-      $("#day1icon").attr("src", "./assets/night-gifs/partly-snow-night.gif");
-      break;
-    case mist.includes(id):
-      $("#day1icon").attr("src", "./assets/night-gifs/mist-night.gif");
-      break;
-    case clearSky == id:
-      $("#day1icon").attr("src", "./assets/night-gifs/clear-night.gif");
-      break;
-    case partlyCloudy.includes(id):
-      $("#day1icon").attr("src", "./assets/night-gifs/partly-cloudy-night.gif");
-      break;
-    case overcast == id:
-      $("#day1icon").attr("src", "./assets/night-gifs/windy-night.gif");
-      break;
-    default:
-      isDayGif(id);
+  if (isNight() && thunder === id) {
+    $("#day1icon").attr("src", "./assets/night-gifs/thunder-night.gif");
+  } else if (isNight() && thunderstorm.includes(id)) {
+    $("#day1icon").attr("src", "./assets/night-gifs/storm-night.gif");
+  } else if (isNight() && heavyRain.includes(id)) {
+    $("#day1icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && lightRain.includes(id)) {
+    $("#day1icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && snow.includes(id)) {
+    $("#day1icon").attr("src", "./assets/night-gifs/snow-night.gif");
+  } else if (isNight() && lightSnow.includes(id)) {
+    $("#day1icon").attr("src", "./assets/night-gifs/partly-snow-night.gif");
+  } else if (isNight() && mist.includes(id)) {
+    $("#day1icon").attr("src", "./assets/night-gifs/mist-night.gif");
+  } else if (isNight() && clearSky == id) {
+    $("#day1icon").attr("src", "./assets/night-gifs/clear-night.gif");
+  } else if (isNight() && partlyCloudy.includes(id)) {
+    $("#day1icon").attr("src", "./assets/night-gifs/partly-cloudy-night.gif");
+  } else if (isNight() && overcast == id) {
+    $("#day1icon").attr("src", "./assets/night-gifs/windy-night.gif");
   }
+  isDayGif(id);
 }
 
 function isDayGif(id) {
-  switch (true) {
-    case thunder == id:
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
-      break;
-    case thunderstorm.includes(id):
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-storm.gif");
-      break;
-    case heavyRain.includes(id):
-      $("#day1icon").attr("src", "./assets/day-gifs/storm-showers-day.gif");
-      break;
-    case lightRain.includes(id):
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-partly-shower.gif");
-      break;
-    case snow.includes(id):
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-snow-sunny.gif");
-      break;
-    case lightSnow.includes(id):
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-snow.gif");
-      break;
-    case mist.includes(id):
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-mist.gif");
-      break;
-    case clearSky == id:
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-sunny.gif");
-      break;
-    case partlyCloudy.includes(id):
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
-      break;
-    case overcast == id:
-      $("#day1icon").attr("src", "./assets/day-gifs/weather-windy.gif");
-      break;
+  if (thunder == id) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
+  } else if (thunderstorm.includes(id)) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-storm.gif");
+  } else if (heavyRain.includes(id)) {
+    $("#day1icon").attr("src", "./assets/day-gifs/storm-showers-day.gif");
+  } else if (lightRain.includes(id)) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-partly-shower.gif");
+  } else if (snow.includes(id)) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-snow-sunny.gif");
+  } else if (lightSnow.includes(id)) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-snow.gif");
+  } else if (mist.includes(id)) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-mist.gif");
+  } else if (clearSky == id) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-sunny.gif");
+  } else if (partlyCloudy.includes(id)) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
+  } else if (overcast == id) {
+    $("#day1icon").attr("src", "./assets/day-gifs/weather-windy.gif");
+  }
+}
+
+function isNightGif2(id) {
+  if (isNight() && thunder === id) {
+    $("#day2icon").attr("src", "./assets/night-gifs/thunder-night.gif");
+  } else if (isNight() && thunderstorm.includes(id)) {
+    $("#day2icon").attr("src", "./assets/night-gifs/storm-night.gif");
+  } else if (isNight() && heavyRain.includes(id)) {
+    $("#day2icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && lightRain.includes(id)) {
+    $("#day2icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && snow.includes(id)) {
+    $("#day2icon").attr("src", "./assets/night-gifs/snow-night.gif");
+  } else if (isNight() && lightSnow.includes(id)) {
+    $("#day2icon").attr("src", "./assets/night-gifs/partly-snow-night.gif");
+  } else if (isNight() && mist.includes(id)) {
+    $("#day2icon").attr("src", "./assets/night-gifs/mist-night.gif");
+  } else if (isNight() && clearSky == id) {
+    $("#day2icon").attr("src", "./assets/night-gifs/clear-night.gif");
+  } else if (isNight() && partlyCloudy.includes(id)) {
+    $("#day2icon").attr("src", "./assets/night-gifs/partly-cloudy-night.gif");
+  } else if (isNight() && overcast == id) {
+    $("#day2icon").attr("src", "./assets/night-gifs/windy-night.gif");
+  }
+  isDayGif2(id);
+}
+
+function isDayGif2(id) {
+  if (thunder == id) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
+  } else if (thunderstorm.includes(id)) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-storm.gif");
+  } else if (heavyRain.includes(id)) {
+    $("#day2icon").attr("src", "./assets/day-gifs/storm-showers-day.gif");
+  } else if (lightRain.includes(id)) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-partly-shower.gif");
+  } else if (snow.includes(id)) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-snow-sunny.gif");
+  } else if (lightSnow.includes(id)) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-snow.gif");
+  } else if (mist.includes(id)) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-mist.gif");
+  } else if (clearSky == id) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-sunny.gif");
+  } else if (partlyCloudy.includes(id)) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
+  } else if (overcast == id) {
+    $("#day2icon").attr("src", "./assets/day-gifs/weather-windy.gif");
   }
 }
