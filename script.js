@@ -176,41 +176,36 @@ function getForecast(city) {
       return response.json();
     })
     .then(function (data) {
-      for (var i = 0; i < data.list.length; i++) {
-        if (data.list[i].dt_txt.indexOf("12:00:00") > 0) {
-          console.log(data.list[i]);
-          printDay2(
-            data.list[0].main.temp,
-            data.list[0].main.humidity,
-            data.list[0].wind.speed
-          );
-          printDay3(
-            data.list[1].main.temp,
-            data.list[1].main.humidity,
-            data.list[1].wind.speed
-          );
-          printDay4(
-            data.list[2].main.temp,
-            data.list[2].main.humidity,
-            data.list[2].wind.speed
-          );
-          printDay5(
-            data.list[3].main.temp,
-            data.list[3].main.humidity,
-            data.list[3].wind.speed
-          );
-          printDay6(
-            data.list[4].main.temp,
-            data.list[4].main.humidity,
-            data.list[4].wind.speed
-          );
-          isNightGif2(data.list[0].weather.id);
-          // isNightGif3(data.list[1].weather.id);
-          // isNightGif4(data.list[2].weather.id);
-          // isNightGif5(data.list[3].weather.id);
-          // isNightGif6(data.list[4].weather.id);
-        }
-      }
+      printDay2(
+        data.list[4].main.temp,
+        data.list[4].main.humidity,
+        data.list[4].wind.speed
+      );
+      printDay3(
+        data.list[12].main.temp,
+        data.list[12].main.humidity,
+        data.list[12].wind.speed
+      );
+      printDay4(
+        data.list[20].main.temp,
+        data.list[20].main.humidity,
+        data.list[20].wind.speed
+      );
+      printDay5(
+        data.list[28].main.temp,
+        data.list[28].main.humidity,
+        data.list[28].wind.speed
+      );
+      printDay6(
+        data.list[36].main.temp,
+        data.list[36].main.humidity,
+        data.list[36].wind.speed
+      );
+      isNightGif2(data.list[4].weather[0].id);
+      isNightGif3(data.list[12].weather[0].id);
+      isNightGif4(data.list[20].weather[0].id);
+      isNightGif5(data.list[28].weather[0].id);
+      isNightGif6(data.list[36].weather[0].id);
     });
 }
 
@@ -274,7 +269,7 @@ var clearSky = 800;
 var partlyCloudy = [801, 802, 803];
 var overcast = 804;
 
-// If isNight, display only night-gifs with matching id
+// DAY 1 - If isNight, display only night-gifs with matching id
 function isNightGif(id) {
   if (isNight() && thunder === id) {
     $("#day1icon").attr("src", "./assets/night-gifs/thunder-night.gif");
@@ -324,6 +319,7 @@ function isDayGif(id) {
   }
 }
 
+// DAY 2 set Gif
 function isNightGif2(id) {
   if (isNight() && thunder === id) {
     $("#day2icon").attr("src", "./assets/night-gifs/thunder-night.gif");
@@ -350,6 +346,7 @@ function isNightGif2(id) {
 }
 
 function isDayGif2(id) {
+  console.log(id);
   if (thunder == id) {
     $("#day2icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
   } else if (thunderstorm.includes(id)) {
@@ -370,5 +367,209 @@ function isDayGif2(id) {
     $("#day2icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
   } else if (overcast == id) {
     $("#day2icon").attr("src", "./assets/day-gifs/weather-windy.gif");
+  }
+}
+
+// DAY 3 set Gif
+function isNightGif3(id) {
+  if (isNight() && thunder === id) {
+    $("#day3icon").attr("src", "./assets/night-gifs/thunder-night.gif");
+  } else if (isNight() && thunderstorm.includes(id)) {
+    $("#day3icon").attr("src", "./assets/night-gifs/storm-night.gif");
+  } else if (isNight() && heavyRain.includes(id)) {
+    $("#day3icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && lightRain.includes(id)) {
+    $("#day3icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && snow.includes(id)) {
+    $("#day3icon").attr("src", "./assets/night-gifs/snow-night.gif");
+  } else if (isNight() && lightSnow.includes(id)) {
+    $("#day3icon").attr("src", "./assets/night-gifs/partly-snow-night.gif");
+  } else if (isNight() && mist.includes(id)) {
+    $("#day3icon").attr("src", "./assets/night-gifs/mist-night.gif");
+  } else if (isNight() && clearSky == id) {
+    $("#day3icon").attr("src", "./assets/night-gifs/clear-night.gif");
+  } else if (isNight() && partlyCloudy.includes(id)) {
+    $("#day3icon").attr("src", "./assets/night-gifs/partly-cloudy-night.gif");
+  } else if (isNight() && overcast == id) {
+    $("#day3icon").attr("src", "./assets/night-gifs/windy-night.gif");
+  }
+  isDayGif3(id);
+}
+
+function isDayGif3(id) {
+  console.log(id);
+  if (thunder == id) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
+  } else if (thunderstorm.includes(id)) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-storm.gif");
+  } else if (heavyRain.includes(id)) {
+    $("#day3icon").attr("src", "./assets/day-gifs/storm-showers-day.gif");
+  } else if (lightRain.includes(id)) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-partly-shower.gif");
+  } else if (snow.includes(id)) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-snow-sunny.gif");
+  } else if (lightSnow.includes(id)) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-snow.gif");
+  } else if (mist.includes(id)) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-mist.gif");
+  } else if (clearSky == id) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-sunny.gif");
+  } else if (partlyCloudy.includes(id)) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
+  } else if (overcast == id) {
+    $("#day3icon").attr("src", "./assets/day-gifs/weather-windy.gif");
+  }
+}
+
+// DAY 4 set Gif
+function isNightGif4(id) {
+  if (isNight() && thunder === id) {
+    $("#day4icon").attr("src", "./assets/night-gifs/thunder-night.gif");
+  } else if (isNight() && thunderstorm.includes(id)) {
+    $("#day4icon").attr("src", "./assets/night-gifs/storm-night.gif");
+  } else if (isNight() && heavyRain.includes(id)) {
+    $("#day4icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && lightRain.includes(id)) {
+    $("#day4icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && snow.includes(id)) {
+    $("#day4icon").attr("src", "./assets/night-gifs/snow-night.gif");
+  } else if (isNight() && lightSnow.includes(id)) {
+    $("#day4icon").attr("src", "./assets/night-gifs/partly-snow-night.gif");
+  } else if (isNight() && mist.includes(id)) {
+    $("#day4icon").attr("src", "./assets/night-gifs/mist-night.gif");
+  } else if (isNight() && clearSky == id) {
+    $("#day4icon").attr("src", "./assets/night-gifs/clear-night.gif");
+  } else if (isNight() && partlyCloudy.includes(id)) {
+    $("#day4icon").attr("src", "./assets/night-gifs/partly-cloudy-night.gif");
+  } else if (isNight() && overcast == id) {
+    $("#day4icon").attr("src", "./assets/night-gifs/windy-night.gif");
+  }
+  isDayGif4(id);
+}
+
+function isDayGif4(id) {
+  console.log(id);
+  if (thunder == id) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
+  } else if (thunderstorm.includes(id)) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-storm.gif");
+  } else if (heavyRain.includes(id)) {
+    $("#day4icon").attr("src", "./assets/day-gifs/storm-showers-day.gif");
+  } else if (lightRain.includes(id)) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-partly-shower.gif");
+  } else if (snow.includes(id)) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-snow-sunny.gif");
+  } else if (lightSnow.includes(id)) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-snow.gif");
+  } else if (mist.includes(id)) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-mist.gif");
+  } else if (clearSky == id) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-sunny.gif");
+  } else if (partlyCloudy.includes(id)) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
+  } else if (overcast == id) {
+    $("#day4icon").attr("src", "./assets/day-gifs/weather-windy.gif");
+  }
+}
+
+// DAY 5 set Gif
+function isNightGif5(id) {
+  if (isNight() && thunder === id) {
+    $("#day5icon").attr("src", "./assets/night-gifs/thunder-night.gif");
+  } else if (isNight() && thunderstorm.includes(id)) {
+    $("#day5icon").attr("src", "./assets/night-gifs/storm-night.gif");
+  } else if (isNight() && heavyRain.includes(id)) {
+    $("#day5icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && lightRain.includes(id)) {
+    $("#day5icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && snow.includes(id)) {
+    $("#day5icon").attr("src", "./assets/night-gifs/snow-night.gif");
+  } else if (isNight() && lightSnow.includes(id)) {
+    $("#day5icon").attr("src", "./assets/night-gifs/partly-snow-night.gif");
+  } else if (isNight() && mist.includes(id)) {
+    $("#day5icon").attr("src", "./assets/night-gifs/mist-night.gif");
+  } else if (isNight() && clearSky == id) {
+    $("#day5icon").attr("src", "./assets/night-gifs/clear-night.gif");
+  } else if (isNight() && partlyCloudy.includes(id)) {
+    $("#day5icon").attr("src", "./assets/night-gifs/partly-cloudy-night.gif");
+  } else if (isNight() && overcast == id) {
+    $("#day5icon").attr("src", "./assets/night-gifs/windy-night.gif");
+  }
+  isDayGif5(id);
+}
+
+function isDayGif5(id) {
+  console.log(id);
+  if (thunder == id) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
+  } else if (thunderstorm.includes(id)) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-storm.gif");
+  } else if (heavyRain.includes(id)) {
+    $("#day5icon").attr("src", "./assets/day-gifs/storm-showers-day.gif");
+  } else if (lightRain.includes(id)) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-partly-shower.gif");
+  } else if (snow.includes(id)) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-snow-sunny.gif");
+  } else if (lightSnow.includes(id)) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-snow.gif");
+  } else if (mist.includes(id)) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-mist.gif");
+  } else if (clearSky == id) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-sunny.gif");
+  } else if (partlyCloudy.includes(id)) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
+  } else if (overcast == id) {
+    $("#day5icon").attr("src", "./assets/day-gifs/weather-windy.gif");
+  }
+}
+
+// DAY 6 set Gif
+function isNightGif6(id) {
+  if (isNight() && thunder === id) {
+    $("#day6icon").attr("src", "./assets/night-gifs/thunder-night.gif");
+  } else if (isNight() && thunderstorm.includes(id)) {
+    $("#day6icon").attr("src", "./assets/night-gifs/storm-night.gif");
+  } else if (isNight() && heavyRain.includes(id)) {
+    $("#day6icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && lightRain.includes(id)) {
+    $("#day6icon").attr("src", "./assets/night-gifs/partly-shower-night.gif");
+  } else if (isNight() && snow.includes(id)) {
+    $("#day6icon").attr("src", "./assets/night-gifs/snow-night.gif");
+  } else if (isNight() && lightSnow.includes(id)) {
+    $("#day6icon").attr("src", "./assets/night-gifs/partly-snow-night.gif");
+  } else if (isNight() && mist.includes(id)) {
+    $("#day6icon").attr("src", "./assets/night-gifs/mist-night.gif");
+  } else if (isNight() && clearSky == id) {
+    $("#day6icon").attr("src", "./assets/night-gifs/clear-night.gif");
+  } else if (isNight() && partlyCloudy.includes(id)) {
+    $("#day6icon").attr("src", "./assets/night-gifs/partly-cloudy-night.gif");
+  } else if (isNight() && overcast == id) {
+    $("#day6icon").attr("src", "./assets/night-gifs/windy-night.gif");
+  }
+  isDayGif6(id);
+}
+
+function isDayGif6(id) {
+  console.log(id);
+  if (thunder == id) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-thunder.gif");
+  } else if (thunderstorm.includes(id)) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-storm.gif");
+  } else if (heavyRain.includes(id)) {
+    $("#day6icon").attr("src", "./assets/day-gifs/storm-showers-day.gif");
+  } else if (lightRain.includes(id)) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-partly-shower.gif");
+  } else if (snow.includes(id)) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-snow-sunny.gif");
+  } else if (lightSnow.includes(id)) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-snow.gif");
+  } else if (mist.includes(id)) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-mist.gif");
+  } else if (clearSky == id) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-sunny.gif");
+  } else if (partlyCloudy.includes(id)) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-partly-cloudy.gif");
+  } else if (overcast == id) {
+    $("#day6icon").attr("src", "./assets/day-gifs/weather-windy.gif");
   }
 }
