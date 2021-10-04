@@ -310,6 +310,45 @@ function chooseGifs(id) {
   switch (isNight()) {
     case thunder == id:
       console.log(thunder);
+      $("#day1icon").innerHTML = thunderNight;
+      break;
+    case thunderstorm.includes(id):
+      $("#day1icon").innerHTML = stormNight;
+      break;
+    case heavyRain.includes(id):
+      $("#day1icon").innerHTML = heavyRainNight;
+      break;
+    case lightRain.includes(id):
+      $("#day1icon").innerHTML = lightRainNight;
+      break;
+    case snow.includes(id):
+      $("#day1icon").innerHTML = snowNight;
+      break;
+    case lightSnow.includes(id):
+      $("#day1icon").innerHTML = partlySnowNight;
+      break;
+    case mist.includes(id):
+      $("#day1icon").innerHTML = mistNight;
+      break;
+    case clearSky == id:
+      $("#day1icon").innerHTML = clearNight;
+      break;
+    case partlyCloudy.includes(id):
+      $("#day1icon").innerHTML = partlyCloudyNight;
+      console.log(overcast);
+      break;
+    case overcast == id:
+      $("#day1icon").innerHTML = windyNight;
+      break;
+    default:
+      dayGifs(id);
+  }
+}
+
+function dayGifs(id) {
+  switch (true) {
+    case thunder == id:
+      console.log(thunder);
       $("#day1icon").innerHTML = thunderDay;
       break;
     case thunderstorm.includes(id):
@@ -325,7 +364,7 @@ function chooseGifs(id) {
       $("#day1icon").innerHTML = snowDay;
       break;
     case lightSnow.includes(id):
-      $("#day1icon").innerHTML = partlySnowDay;
+      $("#day1icon").innerHTML = partlySnowNight;
       break;
     case mist.includes(id):
       $("#day1icon").innerHTML = mistDay;
