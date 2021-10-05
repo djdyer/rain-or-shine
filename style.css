@@ -92,7 +92,7 @@ button:focus {
   border-top: 1px solid rgb(33, 121, 198);
   padding-top: 25px;
   margin-top: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 #results-header {
@@ -110,7 +110,7 @@ button:focus {
   padding: 5px;
   background-color: white;
   border: 1px solid rgb(33, 121, 198);
-  border-radius: 3px;
+  border-radius: 4px;
   color: rgb(33, 121, 198);
   font-family: "Quicksand", sans-serif;
   font-size: 14pt;
