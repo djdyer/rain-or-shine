@@ -1,6 +1,7 @@
 # Rain-or-Shine?
 
 <br/>
+
 ## Repo Contents
 
 <li>README.md</li>
@@ -13,7 +14,9 @@
 
 <br/>
 
-Using the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api), this app will retrieve weather data for users' city input, providing weather details for day-of, along with a 5-day forecast. Between the hours of 8pm-4am local time, the app will feature a darkmode styling.
+## Description
+
+Using the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api), Rain or Shine? will retrieve weather data for a users' city input, providing weather details for day-of, along with 5-day forecast. Between the hours of 8pm-4am local time, the app will feature darkmode styling.
 
 <br/>
 
