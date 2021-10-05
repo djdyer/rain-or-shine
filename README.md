@@ -1,27 +1,60 @@
-# rain-or-shine
+# Rain-or-Shine?
 
-Use the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for cities. Read through the documentation for setup and usage instructions. You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+## Repo Contents
+
+<li>README.md</li>
+<li>index.html</li>
+<li>style.css</li>
+<li>script.js</li>
+<li>reset.css</li>
+<li>assets</li>
+<li>Deployed URL</li>
+
+Using the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api), this app will retrieve weather data for users' city input, providing weather details for day-of, along with a 5-day forecast. Between the hours of 8pm-4am local time, the app will feature a darkmode styling.
+
+<br/>
 
 ## User Story
 
 ```
 AS A traveler
 I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
+SO THAT I can plan a trip accordingly.
 ```
 
-## Acceptance Criteria
+<br/>
+
+## Screenshots
+
+<img src="./assets/rain-or-shine_screenshot_day.png">
+<br />
+<img src="./assets/rain-or-shine_screenshot_night.png">
+
+<br/>
+
+## Criteria
 
 ```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+Search field with prompt and button.
+
+When valid city name provided, user presented with current & future weather conditions.
+
+Search results are added to history under results heading, and persist in local storage.
+
+User is provided with date, gif representation of condition, temp, wind speed, humidity.
+
+UV Index is available for current day with color scale of severity.
+
+Future conditions include a 5 day forecast beyond the current date.
+
+When selecting from search history, user is again presented with results for saved city.
+
+User may only store 5 cities max, and clear results button will erase local storage.
 ```
+
+## Deployed URL
+
+https://github.com/djdyer/rain-or-shine
+<br />
+https://djdyer.github.io/rain-or-shine
+<br />
