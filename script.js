@@ -109,7 +109,7 @@ function getCurrentWeather(city) {
         data.wind.speed
       );
       isNightGif(data.weather[0].id);
-      saveSearch(city);
+      populateSearches(city);
     });
 }
 
@@ -245,57 +245,39 @@ function printDay6(temp, humidity, speed) {
   $("#humid6").text(humidity + "%");
 }
 
-// Saving the search to local storage, displaying history buttons under search
-function saveSearch(city) {
-  console.log(city);
-  localStorage.setItem("search", JSON.stringify(city));
-  $("#results-header").attr("style", "display:flex");
-  $("#result1").attr("style", "display:inline");
-  $("#result1").text(city);
-  if (isNight()) {
-    $("#result1").attr("style", "color:white; background-color:#222");
+var citiesArray = [];
+
+function populateSearches(city) {
+  citiesArray = JSON.parse(localStorage.getItem("cities"));
+  if (!citiesArray) {
+    citiesArray = [];
   }
-  saveSearch2();
+  if (city && !citiesArray.includes(city)) {
+    citiesArray.unshift(city);
+  }
+  while (citiesArray.length > 5) {
+    citiesArray.pop();
+  }
+  localStorage.setItem("cities", JSON.stringify(citiesArray));
+  for (var i = 0; i < citiesArray.length; i++) {
+    $("#results-header").attr("style", "display:flex");
+    $("#result" + [i]).attr("style", "display:inline");
+    $("#result" + [i]).text(citiesArray[i]);
+  }
 }
 
-function saveSearch2(city) {
-  localStorage.setItem("search2", city);
-  $("#result2").attr("style", "display:inline");
-  $("#result2").text(city);
-  if (isNight()) {
-    $("#result2").attr("style", "color:white; background-color:#222");
-  }
-  saveSearch3();
-}
+// $("#closeBtn").on("click", removeItem);
 
-function saveSearch3(city) {
-  localStorage.setItem("search3", city);
-  $("#result3").attr("style", "display:inline");
-  $("#result3").text(city);
-  if (isNight()) {
-    $("#result3").attr("style", "color:white; background-color:#222");
-  }
-  saveSearch4();
-}
+// removeItem() {
+//   localStorage.removeItem("cities");
+// }
 
-function saveSearch4(city) {
-  localStorage.setItem("search4", city);
-  $("#result4").attr("style", "display:inline");
-  $("#result4").text(city);
-  if (isNight()) {
-    $("#result4").attr("style", "color:white; background-color:#222");
-  }
-  saveSearch5();
-}
-
-function saveSearch5(name) {
-  localStorage.setItem("search5", name);
-  $("#result5").attr("style", "display:inline");
-  $("#result5").text(name);
-  if (isNight()) {
-    $("#result5").attr("style", "color:white; background-color:#222");
-  }
-}
+// Target results buttons for click event to launch newSearch
+$("#result0").on("click", newSearch);
+$("#result1").on("click", newSearch);
+$("#result2").on("click", newSearch);
+$("#result3").on("click", newSearch);
+$("#result4").on("click", newSearch);
 
 // Summarized weather scenarios & ids
 var thunder = 200;
@@ -620,3 +602,5 @@ function isDayGif6(id) {
     $("#day6icon").attr("src", "./assets/day-gifs/weather-windy.gif");
   }
 }
+
+populateSearches();
