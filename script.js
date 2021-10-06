@@ -266,13 +266,17 @@ function populateSearches(city) {
   }
 }
 
-// $("#closeBtn").on("click", removeItem);
+// Close button clears local storage, hides results and header
+$("#closeBtn").on("click", clearStorage);
+function clearStorage() {
+  for (var i = 0; i < citiesArray.length; i++) {
+    $("#results-header").attr("style", "display:none");
+    $("#result" + [i]).attr("style", "display:none");
+    localStorage.clear();
+  }
+}
 
-// removeItem() {
-//   localStorage.removeItem("cities");
-// }
-
-// Target results buttons for click event to launch newSearch
+// Targets results buttons for click event to launch newSearch
 $("#result0").on("click", newSearch);
 $("#result1").on("click", newSearch);
 $("#result2").on("click", newSearch);
