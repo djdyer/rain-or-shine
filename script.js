@@ -277,11 +277,17 @@ function clearStorage() {
 }
 
 // Targets results buttons for click event to launch newSearch
-$("#result0").on("click", newSearch);
-$("#result1").on("click", newSearch);
-$("#result2").on("click", newSearch);
-$("#result3").on("click", newSearch);
-$("#result4").on("click", newSearch);
+$("#result0").on("click", rerunSearch);
+$("#result1").on("click", rerunSearch);
+$("#result2").on("click", rerunSearch);
+$("#result3").on("click", rerunSearch);
+$("#result4").on("click", rerunSearch);
+
+function rerunSearch(event) {
+  var city = event.target.textContent;
+  getCurrentWeather(city);
+  getForecast(city);
+}
 
 // Summarized weather scenarios & ids
 var thunder = 200;
