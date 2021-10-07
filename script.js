@@ -25,6 +25,7 @@ function darkMode() {
     $("h4").attr("style", "color:rgb(201, 201, 201)");
     $("h5").attr("style", "color:rgb(201, 201, 201)");
     $("h6").attr("style", "color:rgb(201, 201, 201)");
+    // $("button").attr("style", "color:rgb(201, 201, 201)");
     $("#input").attr(
       "style",
       "color:white; border: 1px solid #333; background-color:#222"
@@ -263,6 +264,12 @@ function populateSearches(city) {
     $("#results-header").attr("style", "display:flex");
     $("#result" + [i]).attr("style", "display:inline");
     $("#result" + [i]).text(citiesArray[i]);
+    if (isNight()) {
+      $("#result" + [i]).attr(
+        "style",
+        "color:white; background-color:#222; display:inline"
+      );
+    }
   }
 }
 
